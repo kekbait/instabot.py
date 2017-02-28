@@ -768,7 +768,7 @@ class InstaBot:
                     all_data = json.loads(json_str)
 
                     self.media_on_feed = list(all_data['entry_data']['FeedPage'][0]\
-                                            ['feed']['media']['nodes'])
+                                            ['graphql']['user']['edge_web_feed_timeline']['edges'])
                     log_string="Media in recent feed = %i"%(len(self.media_on_feed))
                     self.write_log(log_string)
                 except:
